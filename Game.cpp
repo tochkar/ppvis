@@ -23,3 +23,17 @@ void Game::showField()
     }
 }
 
+
+Game::Game(int fSize) : fieldSize(fSize){
+   int maxMoves = fieldSize * fieldSize;
+    field = new int*[fieldSize];
+    for (int i = 0; i < fieldSize; i++)
+        field[i] = new int[fieldSize];
+
+    for (int i = 0; i < fieldSize; i++) // ввод
+        for (int j = 0; j < fieldSize; j++)
+        {
+            field[i][j] = 0;
+        }
+}
+
