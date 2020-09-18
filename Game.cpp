@@ -37,3 +37,14 @@ Game::Game(int fSize) : fieldSize(fSize){
         }
 }
 
+bool Game::checkPlace(int row, int column)
+{
+    if((row < 0) || (column < 0) || (row >= fieldSize) || (column >= fieldSize))return false;
+    return !field[row][column];
+}
+
+void Game::setValue(int row, int column, int val)
+{
+    field[row][column] = val;
+    maxMoves--;
+}
